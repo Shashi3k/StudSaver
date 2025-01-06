@@ -51,7 +51,7 @@ export default function CreateListing() {
           setUploading(false);
         })
         .catch((err) => {
-          setImageUploadError('Image upload failed (2 mb max per image)');
+          setImageUploadError('Image upload failed (We are still newbies, with lack of resources, please keep the limit upto 2mb)');
           setUploading(false);
         });
     } else {
@@ -156,13 +156,13 @@ export default function CreateListing() {
   return (
     <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
-        Create a Listing
+      Post Your Deal
       </h1>
       <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
         <div className='flex flex-col gap-4 flex-1'>
           <input
             type='text'
-            placeholder='Name'
+            placeholder='Name (for ex. Casio FX-991CW)'
             className='border p-3 rounded-lg'
             id='name'
             maxLength='62'
@@ -173,8 +173,8 @@ export default function CreateListing() {
           />
           <textarea
             type='text'
-            placeholder='Description'
-            className='border p-3 rounded-lg'
+            placeholder='Description  (for ex. Faster than any previous Casio Non-Programmable Scientific Calculator. 1 year old. Works fine with no probems.)'
+            className='border p-4 rounded-lg w-full h-32'
             id='description'
             required
             onChange={handleChange}
@@ -182,7 +182,7 @@ export default function CreateListing() {
           />
           <input
             type='text'
-            placeholder='Address'
+            placeholder='Branch & Year (for ex. CSE(2nd Year))'
             className='border p-3 rounded-lg'
             id='address'
             required
@@ -218,7 +218,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.parking}
               />
-              <span>Parking spot</span>
+              <span>Meet In Campus</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -228,7 +228,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.furnished}
               />
-              <span>Furnished</span>
+              <span>Under Warranty</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -253,7 +253,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
-              <p>Beds</p>
+              <p>Quantity</p>
             </div>
             <div className='flex items-center gap-2'>
               <input
@@ -266,7 +266,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
-              <p>Baths</p>
+              <p>Condition</p>
             </div>
             <div className='flex items-center gap-2'>
               <input
@@ -282,7 +282,7 @@ export default function CreateListing() {
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(₹ / month)</span>
                 )}
               </div>
             </div>
@@ -302,7 +302,7 @@ export default function CreateListing() {
                   <p>Discounted price</p>
 
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>(₹ / month)</span>
                   )}
                 </div>
               </div>
@@ -361,7 +361,7 @@ export default function CreateListing() {
             disabled={loading || uploading}
             className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
           >
-            {loading ? 'Creating...' : 'Create listing'}
+            {loading ? 'Posting...' : 'Post Deal'}
           </button>
           {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>

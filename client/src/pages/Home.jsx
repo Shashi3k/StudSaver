@@ -50,15 +50,14 @@ export default function Home() {
       {/* top */}
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
         <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          Find your next <span className='text-slate-500'>perfect</span>
+        Affordable Finds for <span className='text-orange-500'>REVAite</span>
           <br />
-          place with ease
+          by <span className='text-orange-500'>REVAite</span>
         </h1>
         <div className='text-gray-400 text-xs sm:text-sm'>
-          Sahand Estate is the best place to find your next perfect place to
-          live.
+        Discover a platform where students connect to buy, sell, and share essentials within the campus.
           <br />
-          We have a wide range of properties for you to choose from.
+          Save money, reduce waste, and build a thriving community!
         </div>
         <Link
           to={'/search'}
@@ -105,7 +104,7 @@ export default function Home() {
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent Items for rent</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -118,7 +117,7 @@ export default function Home() {
         {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent Items for sale</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
             </div>
             <div className='flex flex-wrap gap-4'>

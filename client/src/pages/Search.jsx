@@ -188,7 +188,7 @@ export default function Search() {
             </div>
           </div>
           <div className='flex gap-2 flex-wrap items-center'>
-            <label className='font-semibold'>Amenities:</label>
+            <label className='font-semibold'>Condition:</label>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -197,7 +197,7 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.parking}
               />
-              <span>Parking</span>
+              <span>Meet In Campus</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -207,7 +207,7 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.furnished}
               />
-              <span>Furnished</span>
+              <span>Under Warranty</span>
             </div>
           </div>
           <div className='flex items-center gap-2'>
@@ -231,11 +231,11 @@ export default function Search() {
       </div>
       <div className='flex-1'>
         <h1 className='text-3xl font-semibold border-b p-3 text-slate-700 mt-5'>
-          Listing results:
+          Search results:
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
           {!loading && listings.length === 0 && (
-            <p className='text-xl text-slate-700'>No listing found!</p>
+            <p className='text-xl text-slate-700'>We couldn’t find any results for your search. Try adjusting your filters or keywords!</p>
           )}
           {loading && (
             <p className='text-xl text-slate-700 text-center w-full'>
